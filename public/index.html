@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>RAG Support Chat</title>
+  <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: system-ui, sans-serif; background: #f0f2f5; height: 100dvh; display: flex; flex-direction: column; }
+
+    header {
+      background: #1a1a2e; color: #fff;
+      padding: 12px 20px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    header .title { font-size: 16px; font-weight: 500; }
+    header .subtitle { font-size: 12px; opacity: .5; margin-top: 2px; }
+    header button {
+      background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2);
+      color: #fff; padding: 7px 14px; border-radius: 6px; cursor: pointer; font-size: 13px;
+    }
+    header button:hover { background: rgba(255,255,255,0.2); }
+
+    /* Upload panel */
+    #upload-panel {
+      display: none; background: #fff;
+      border-bottom: 1px solid #e0e0e0; padding: 16px 20px;
+    }
+    #upload-panel.open { display: block; }
+    #drop-zone {
+      border: 2px dashed #c0c0c0; border-radius: 10px;
+      padding: 28px; text-align: center; cursor: pointer;
+      transition: border-color .2s, background .2s;
+      color: #888; font-size: 14px;
+    }
+    #drop-zone.drag-over { border-color: #1a1a2e; background: #f0f2ff; }
+    #drop-zone input { display: none; }
+    #drop-zone .icon { font-size: 28px; margin-bottom: 8px; }
+    #drop-zone strong { color: #1a1a2e; }
+    #file-list { margin-top: 12px; display: flex; flex-direction: column; gap: 6px; }
+    .file-item {
+      display: flex; align-items: center; justify-content: space-between;
+      background: #f8f9fa; border-radius: 6px; padding: 8px 12px; font-size: 13px;
+    }
+    .file-item .name { font-weight: 500; color: #1a1a2e; }
+    .file-item .status { font-size: 12px; padding: 2px 8px; border-radius: 10px; }
+    .file-item .status.pending  { background: #fff3cd; color: #856404; }
+    .file-item .status.indexing { background: #cce5ff; color: #004085; }
+    .file-item .status.done     { background: #d4edda; color: #155724; }
+    .file-item .status.error    { background: #f8d7da; color: #721c24; }
+    #upload-btn {
+      margin-top: 12px; width: 100%;
+      background: #1a1a2e; color: #fff; border: none;
+      padding: 10px; border-radius: 8px; cursor: pointer; font-size: 14px;
+    }
+    #upload-btn:disabled { opacity: .5; cursor: default; }
+
+    /* Messages */
+    #messages { flex: 1; overflow-y: auto; padding: 20px; display: flex; flex-direction: column; gap: 12px; }
+    .msg { max-width: 74%; padding: 12px 16px; border-radius: 12px; line-height: 1.6; font-size: 14px; }
+    .msg.user { background: #1a1a2e; color: #fff; align-self: flex-end; border-bottom-right-radius: 4px; }
+    .msg.bot  { background: #fff; border: 1px solid #e0e0e0; align-self: flex-start; border-bottom-left-radius: 4px; }
+    .msg .sources { margin-top: 8px; font-size: 11px; opacity: .55; }
+    .msg.typing { opacity: .6; font-style: italic; }
+
+    /* Input bar */
+    #form { display: flex; gap: 8px; padding: 14px 20px; background: #fff; border-top: 1px solid #e0e0e0; }
+    #input { flex: 1; padding: 10px 14px; border: 1px solid #d0d0d0; border-radius: 8px; font-size: 14px; outline: none; }
+    #input:focus { border-color: #1a1a2e; }
+    #form button { padding: 10px 20px; background: #1a1a2e; color: #fff; border: none; border-radius: 8px; cursor: pointer; font-size: 14px; }
+    #form button:disabled { opacity: .45; cursor: default; }
+  </style>
+</head>
+<body>
+
+<header>
+  <div>
+    <div class="title">Support Chat</div>
+    <div class="subtitle">RAG · BM25 + Vector · Claude</div>
+  </div>
+  <button onclick="toggleUpload()">+ Upload Docs</button>
+</header>
+
+<!-- Upload panel -->
+<div id="upload-panel">
+  <div id="drop-zone" onclick="document.getElementById('file-input').click()"
+       ondragover="onDragOver(event)" ondragleave="onDragLeave(event)" ondrop="onDrop(event)">
+    <input type="file" id="file-input" multiple accept=".txt,.md,.pdf" onchange="onFileSelect(event)"/>
+    <div class="icon">📄</div>
+    <div><strong>Click to browse</strong> or drag & drop files here</div>
+    <div style="margin-top:4px;font-size:12px">.txt, .md, .pdf supported</div>
+  </div>
+  <div id="file-list"></div>
+  <button id="upload-btn" onclick="uploadFiles()" disabled>Upload & Index</button>
+</div>
+
+<div id="messages">
+  <div class="msg bot">Hi! I'm your support assistant. Ask me anything — or upload documents using the button above to expand my knowledge.</div>
+</div>
+
+<form id="form" onsubmit="sendMsg(event)">
+  <input id="input" placeholder="Ask a question…" autocomplete="off"/>
+  <button id="send-btn">Send</button>
+</form>
+
+<script>
+  const socket  = io();
+  const history = [];
+  let   botDiv  = null;
+  let   pendingFiles = [];
+
+  // ── Upload panel ────────────────────────────────────────────────────────────
+  function toggleUpload() {
+    document.getElementById('upload-panel').classList.toggle('open');
+  }
+
+  function onDragOver(e) {
+    e.preventDefault();
+    document.getElementById('drop-zone').classList.add('drag-over');
+  }
+  function onDragLeave() {
+    document.getElementById('drop-zone').classList.remove('drag-over');
+  }
+  function onDrop(e) {
+    e.preventDefault();
+    document.getElementById('drop-zone').classList.remove('drag-over');
+    addFiles([...e.dataTransfer.files]);
+  }
+  function onFileSelect(e) {
+    addFiles([...e.target.files]);
+  }
+
+  function addFiles(files) {
+    files.forEach(f => {
+      if (!pendingFiles.find(p => p.name === f.name)) pendingFiles.push(f);
+    });
+    renderFileList();
+    document.getElementById('upload-btn').disabled = pendingFiles.length === 0;
+  }
+
+  function renderFileList() {
+    const list = document.getElementById('file-list');
+    list.innerHTML = pendingFiles.map((f, i) =>
+      `<div class="file-item" id="file-${i}">
+        <span class="name">${f.name}</span>
+        <span class="status pending" id="status-${i}">Pending</span>
+      </div>`
+    ).join('');
+  }
+
+  async function uploadFiles() {
+    document.getElementById('upload-btn').disabled = true;
+
+    for (let i = 0; i < pendingFiles.length; i++) {
+      const file = pendingFiles[i];
+      setStatus(i, 'indexing', 'Indexing…');
+
+      try {
+        const text = await readFileText(file);
+        const res  = await fetch('/api/ingest', {
+          method:  'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body:    JSON.stringify({ text, source: file.name }),
+        });
+        const data = await res.json();
+        setStatus(i, 'done', `${data.chunksIndexed} chunks`);
+        addSystemMsg(`Indexed "${file.name}" — ${data.chunksIndexed} chunks added.`);
+      } catch (err) {
+        setStatus(i, 'error', 'Failed');
+      }
+    }
+
+    pendingFiles = [];
+    setTimeout(() => {
+      document.getElementById('file-list').innerHTML = '';
+      document.getElementById('upload-btn').disabled = true;
+    }, 3000);
+  }
+
+  function setStatus(i, cls, text) {
+    const el = document.getElementById(`status-${i}`);
+    if (el) { el.className = `status ${cls}`; el.textContent = text; }
+  }
+
+  function readFileText(file) {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onload  = e => resolve(e.target.result);
+      reader.onerror = reject;
+      reader.readAsText(file);
+    });
+  }
+
+  function addSystemMsg(text) {
+    const msgs = document.getElementById('messages');
+    const div  = document.createElement('div');
+    div.style.cssText = 'text-align:center;font-size:12px;color:#888;padding:4px 0';
+    div.textContent = text;
+    msgs.appendChild(div);
+    msgs.scrollTop = msgs.scrollHeight;
+  }
+
+  // ── Chat ────────────────────────────────────────────────────────────────────
+  function addMsg(role, text) {
+    const msgs = document.getElementById('messages');
+    const div  = document.createElement('div');
+    div.className = `msg ${role}`;
+    div.textContent = text;
+    msgs.appendChild(div);
+    msgs.scrollTop = msgs.scrollHeight;
+    return div;
+  }
+
+  function sendMsg(e) {
+    e.preventDefault();
+    const q = document.getElementById('input').value.trim();
+    if (!q) return;
+
+    addMsg('user', q);
+    history.push({ role: 'user', content: q });
+    document.getElementById('input').value = '';
+    document.getElementById('send-btn').disabled = true;
+
+    botDiv = addMsg('bot', '…');
+    botDiv.classList.add('typing');
+    botDiv._text = '';
+
+    socket.emit('chat', { query: q, history });
+  }
+
+  socket.on('delta', ({ text }) => {
+    if (!botDiv) return;
+    botDiv._text += text;
+    botDiv.textContent = botDiv._text;
+    botDiv.classList.remove('typing');
+    document.getElementById('messages').scrollTop = 99999;
+  });
+
+  socket.on('done', () => {
+    if (botDiv) { history.push({ role: 'assistant', content: botDiv._text }); botDiv = null; }
+    document.getElementById('send-btn').disabled = false;
+    document.getElementById('input').focus();
+  });
+
+  socket.on('error', ({ message }) => {
+    if (botDiv) botDiv.textContent = 'Error: ' + message;
+    document.getElementById('send-btn').disabled = false;
+  });
+</script>
+</body>
+</html>
