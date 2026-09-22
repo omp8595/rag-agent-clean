@@ -1,0 +1,34 @@
+{
+  "project": "Enterprise Insurance Knowledge Graph + GraphRAG",
+  "nodes": 255,
+  "relationships": 317,
+  "evaluation": {
+    "cases": 4,
+    "entity_resolution_accuracy": 1,
+    "average_required_fact_retrieval_recall": 1,
+    "scope_note": "Metrics apply to the current curated four-query evaluation set and are not production-wide accuracy claims."
+  },
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "architecture": [
+    "Enterprise source ingestion",
+    "Canonical insurance knowledge graph",
+    "Type-aware entity resolution",
+    "Adaptive graph traversal",
+    "Graph-grounded generation",
+    "Deterministic validation",
+    "Deterministic answer routing for high-risk structured facts"
+  ],
+  "answer_routing": {
+    "deterministic": [
+      "Claim",
+      "Invoice",
+      "BillingStatement"
+    ],
+    "generative_with_validation": [
+      "Policy",
+      "Customer",
+      "cross-domain synthesis"
+    ]
+  },
+  "key_finding": "Structured financial and claims facts are rendered deterministically, while generative GraphRAG is reserved for synthesis where appropriate."
+}
