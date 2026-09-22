@@ -1,0 +1,5 @@
+test,entity_correct,facts_retrieved,facts_expected,retrieval_recall,answer_status
+Claim retrieval,True,4,4,1.0,DETERMINISTIC
+Invoice retrieval,True,4,4,1.0,DETERMINISTIC
+Policy retrieval,True,1,1,1.0,PASS
+Billing statement retrieval,True,1,1,1.0,DETERMINISTIC
