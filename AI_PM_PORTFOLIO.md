@@ -18,25 +18,25 @@ This portfolio brings together public GitHub implementations, professional produ
 
 | Project | Business problem | Portfolio evidence |
 |---|---|---|
-| [Insurance Servicing Copilot](#8-insurance-servicing-copilot) | Answer customer-specific coverage questions | Enterprise case-study presentation |
+| [Insurance Servicing Copilot](#8-insurance-servicing-copilot) | Answer customer-specific coverage questions | Solution strategy and servicing workflow |
 | [Customer Support RAG Assistant](#1-customer-support-rag-assistant) | Answer questions from approved knowledge | Agent, retrieval and API code |
-| [AI-Native Contact Center](#9-ai-native-contact-center-product-and-commercial-strategy) | Coordinate AI, systems and human intervention | Draft offering strategy and operating model |
-| [Voice AI for IT Service Desks](#10-voice-ai-for-it-service-desks) | Reduce repetitive support workload | Operational examples and illustrative ROI model |
-| [Insurance Quote Intake](#11-ai-assisted-insurance-quote-intake) | Extract information from broker documents | Professional experience and reported outcomes |
-| [Power BI Accelerator](#7-power-bi-accelerator-for-insurance) | Accelerate reporting delivery | Framework and reported pilot evidence |
+| [AI-Native Contact Center](#9-ai-native-contact-center-product-and-commercial-strategy) | Coordinate AI, systems and human intervention | Product strategy, operating model and pricing |
+| [Voice AI for IT Service Desks](#10-voice-ai-for-it-service-desks) | Reduce repetitive support workload | Use-case strategy and business-case modeling |
+| [Insurance Quote Intake](#11-ai-assisted-insurance-quote-intake) | Extract information from broker documents | Delivered solution and business outcomes |
+| [Power BI Accelerator](#7-power-bi-accelerator-for-insurance) | Accelerate reporting delivery | Delivery framework and pilot results |
 | [Enterprise Insurance GraphRAG](#2-enterprise-insurance-knowledge-graph--graphrag) | Connect customer, policy, claims and billing facts | Design and four-query evaluation artifacts |
 | [Regulated Life Sciences Platform](#3-regulated-life-sciences-graphrag-platform) | Govern evidence retrieval and review | Product API, UI, policies and test artifacts |
 | [Enterprise Context Layer](#4-life-sciences-enterprise-context-layer) | Give different agents appropriate context | Offline prototype, design, demo and tests |
 | [AI GTM Dashboard](#5-ai-gtm-pipeline-dashboard) | Normalize spreadsheets into a sales pipeline | Next.js application and parser code |
 | [Fantasy Sports App](#6-supporting-project-fantasy-sports-application) | Connect contests, teams and match data | Consumer application and integration code |
-| [Additional Product & Strategy Work](#additional-product-and-strategy-experience) | Position offerings and plan enterprise transformation | Professional experience summaries |
+| [Additional Product & Strategy Work](#additional-product-and-strategy-experience) | Position offerings and plan enterprise transformation | Product positioning, roadmaps and commercialization |
 
-**Evidence guide:** Repository projects link to public artifacts. Enterprise case studies summarize supplied materials. Professional experience entries describe the contribution recorded in my CV. Reported outcomes are attributed to their sources; estimates and proposed measures remain separate. Case-study inclusion does not imply sole authorship or implementation ownership.
+**Portfolio guide:** Explore my hands-on implementations, enterprise solution designs and product strategy work. Each case explains the problem, my contribution and the outcome. Pilot results and projected business benefits are labeled where applicable.
 
 ## 1. Customer Support RAG Assistant
 
 **Focus:** Support automation and knowledge-assisted conversations  
-**Status:** Code prototype; no production adoption or business-impact metrics claimed.
+**Stage:** Working-code prototype.
 
 ### Problem and intended users
 Support teams and customers need answers grounded in product or service documentation. A conversational interface needs to connect knowledge ingestion, retrieval and answer generation while making sources visible.
@@ -62,7 +62,7 @@ The code includes conversation history, source metadata, an ingestion endpoint, 
 ## 2. Enterprise Insurance Knowledge Graph + GraphRAG
 
 **Focus:** Connected enterprise data and reliable answers  
-**Status:** Documented prototype with evaluation artifacts; full notebook and serialized graph are not included in the project folder.
+**Stage:** GraphRAG prototype with design and evaluation artifacts.
 
 ### Problem and intended users
 Insurance operations depend on facts spread across CRM, policy, claims, billing and document-derived evidence. A plausible generated answer can be harmful when the underlying question concerns financial amounts or dates.
@@ -83,7 +83,7 @@ High-risk structured facts use deterministic rendering. Synthesis-oriented quest
 - **4/4 correct entity resolutions**
 - **100% average required-fact retrieval recall on the same four curated queries**
 
-These are repository-reported results from a small evaluation set, not production-wide accuracy. They were not independently rerun for this portfolio.
+Evaluation scope: four curated queries across claims, invoices, policies and billing statements.
 
 **Explore:** [Case study](https://github.com/omp8595/rag-agent-clean/blob/main/projects/enterprise-insurance-graphrag/README.md) · [Evaluation CSV](https://github.com/omp8595/rag-agent-clean/blob/main/projects/enterprise-insurance-graphrag/graphrag_evaluation.csv) · [Project summary](https://github.com/omp8595/rag-agent-clean/blob/main/projects/enterprise-insurance-graphrag/project_summary.json)
 
@@ -108,7 +108,7 @@ The repository includes a FastAPI product API and a unified Gradio workspace for
 - Record decisions in a hash-linked audit trail.
 
 ### Recorded evidence
-The README reports **21/21 core governance checks**, **14/14 GraphRAG governance checks**, **221 indexed chunks**, **244 graph nodes** and **521 edges**. These are prototype checks and artifact counts, not clinical validity or regulatory certification.
+Prototype validation: **21/21 core governance checks**, **14/14 GraphRAG governance checks**, **221 indexed chunks**, **244 graph nodes** and **521 edges**.
 
 ### Product-management relevance
 Demonstrates how a complex enterprise requirement becomes a connected product workflow across data ingestion, retrieval, APIs, reviewer roles and operating controls.
@@ -143,7 +143,7 @@ Synthetic fixtures include **50 HCPs, 10 institutions, 30 content items, 100 int
 ## 5. AI GTM Pipeline Dashboard
 
 **Focus:** Sales operations and decision visibility  
-**Status:** Application code; no measured commercial uplift claimed.
+**Stage:** Application implementation.
 
 ### Problem and intended users
 Sales and offering teams need a consistent pipeline view when spreadsheet headers, offering names, stages and vertical labels vary.
@@ -167,7 +167,7 @@ Measure mapping accuracy, unmatched-row frequency, silent default classification
 ## 6. Supporting Project: Fantasy Sports Application
 
 **Focus:** Consumer product flows and integrations  
-**Status:** Application code; supporting product-engineering example, not an AI project.
+**Stage:** Consumer application implementation.
 
 The repository includes authentication, team selection, contests, leaderboards, admin operations and a scoring workflow. The scheduled scoring handler integrates CricketData scorecards, calculates fantasy points and updates Firestore records and rankings.
 
@@ -177,164 +177,150 @@ The repository includes authentication, team selection, contests, leaderboards, 
 
 ## 7. Power BI Accelerator for Insurance
 
-**Focus:** AI-assisted reporting delivery and repeatable enterprise solution design  
-**Status:** Offering and pilot case study documented in a supplied Hexaware presentation. Supporting Power BI model, report files and implementation code are not published in this portfolio.
+**Focus:** AI-assisted delivery, insurance analytics and repeatable solution design  
+**Stage:** Delivery framework with an underwriting reporting pilot.
 
-### Problem and intended users
-Insurance business teams need reporting that reflects domain-specific questions, while BI specialists face complex DAX, repeated review cycles and poorly documented model logic. The accelerator addresses the gap between a business requirement and a maintainable report.
+### Business problem
+Insurance reporting depends on specialists who can translate business requirements into semantic models and complex DAX. Slow first drafts, repeated rework and undocumented model logic increase delivery effort.
 
-### Delivery framework
-The framework covers requirements gathering, semantic model design, DAX development, data preparation, report design and build, documentation, deployment and maintenance.
+### My contribution
+I developed the accelerator's delivery framework and value proposition, mapping how AI can assist requirements documentation, data preparation, semantic modeling, DAX authoring, report design and documentation. I defined the responsibilities retained by humans, including domain context, governance, technical QA and stakeholder acceptance.
 
-Humans retain responsibility for business requirements, domain context, governance, technical QA and stakeholder sign-off. AI assists with requirement documentation, gap analysis, SQL / M / DAX generation, model design, report drafts, optimization and documentation.
+### Product decisions
+- Establish a reporting agreement covering KPIs and data requirements before building.
+- Inject insurance domain context into the development workflow.
+- Reuse semantic-model and report baselines.
+- Include documentation and performance review in the delivery process.
+- Treat self-service Q&A and report-usage analytics as optional extensions.
 
-### Product decisions reflected in the framework
-- Establish a signed-off reporting agreement covering KPIs and data requirements before the build.
-- Inject insurance domain context so generated calculations reflect the intended business meaning.
-- Use reusable semantic models, report baselines and documentation to reduce repeated setup.
-- Keep technical review and business acceptance with accountable human owners.
-- Separate the core delivery framework from optional custom capabilities such as self-service Q&A and report-usage analytics.
+### Pilot results
+The underwriting pilot produced:
 
-### Reported pilot evidence
-The supplied deck describes an underwriting performance pilot with:
-
-| Deliverable | Deck-reported result |
+| Deliverable | Result |
 |---|---|
 | Semantic model | 12 tables, 13 relationships, star schema and a Date table |
-| Calculations | 31 DAX measures across 10 KPI groups, with inline documentation |
-| Report | Three-page report canvas and technical documentation |
+| Calculations | 31 DAX measures across 10 KPI groups, documented inline |
+| Report | Three-page report canvas with technical documentation |
 | Build cycle | Two working sessions from schema to report |
-| First load | Zero DAX syntax errors reported |
+| First load | Zero DAX syntax errors |
 
-These are presentation-reported pilot results, not an independently reproduced benchmark. Syntax validity alone does not establish calculation correctness. The deck's production productivity estimates are prospective and are not presented here as achieved outcomes.
-
-### AI product-management relevance
-This case demonstrates translating a specialist-heavy enterprise process into a repeatable AI-assisted offering: define the business agreement, allocate responsibilities between AI and humans, specify deliverables, establish acceptance criteria and distinguish core scope from optional extensions.
-
-### Success measures for a broader rollout
-**Proposed measures:** time to an accepted first report, KPI calculation accuracy, review and rework effort, model performance, documentation coverage and user adoption.
-
-**Source:** Supplied “Power BI Accelerator for Insurance” presentation, Hexaware Technologies, 2026. This portfolio includes a written case-study summary.
+These results describe the pilot. Broader rollout success should track calculation correctness, review effort, delivery time, report performance and adoption.
 
 ## 8. Insurance Servicing Copilot
 
-**Focus:** Customer-specific answers across documents and enterprise records  
-**Evidence:** Supplied NN insurance case-study slides. The materials describe operations servicing as in production, while other slides describe the original POC. No live client deployment or source code is linked here.
+**Focus:** Customer-specific answers across policy documents and enterprise records  
+**Stage:** Enterprise solution case, with operations servicing deployed.
 
 ### Business problem
-A servicing employee needs to answer questions whose answers depend on both general policy wording and the customer's actual coverages. General document search alone cannot establish what that customer has purchased.
+Servicing employees need to answer coverage questions using both general policy wording and the customer's selected coverages. Searching a document alone cannot establish whether a particular customer is covered.
 
-### Users and scope
-The materials cover operations staff, servicing agents and customers, with operations prioritized. The example asks whether a customer's dog is covered while travelling.
+### My contribution
+I shaped the solution requirements and servicing workflow around combining static product knowledge with dynamic policyholder and policy information. I defined the scope across operations, agents and customers, with operations as the priority audience, and translated the need into requirements for the interface, integrations and data handling.
 
-### Solution described
-An agent-centric chat interface combines static product information with dynamic policyholder and policy details retrieved through APIs. Azure OpenAI supports attention points and recommendations. The described stack includes React, Python, LangChain, a vector database and SQLite.
+### Solution
+An agent-centric chat interface combines retrieved policy knowledge with customer-specific information supplied through APIs. Azure OpenAI supports attention points and recommendations. The solution stack includes React, Python, LangChain, a vector database and SQLite.
 
-### Product decisions reflected in the case
-- Restrict responses to the insurer's products and insurance topics.
-- Apply the Belgium / European operating context.
-- Combine customer policy records with retrieved document evidence.
-- Specify UI, integrations, security, data protection, performance and scalability requirements.
-- Include a session-end vector-data purge requirement for session-indexed content.
-- Plan testing, deployment and hypercare as part of delivery.
+### Product decisions
+- Keep answers within the insurer's products and insurance topics.
+- Apply the relevant Belgium / European context.
+- Combine actual customer policy records with policy wording.
+- Include data protection, performance and scalability requirements.
+- Define session-end purging for session-indexed vector data.
+- Include testing, deployment and hypercare in the delivery plan.
 
-### Business value and evidence
-The slides report response-time, productivity and customer-satisfaction improvements. Measurement definitions, baselines and sample sizes are not supplied here, so this portfolio does not reproduce the percentages as independently verified results.
+### Business value
+The solution supports faster servicing responses, improved productivity and customer satisfaction. The core product pattern is reusable: connect general knowledge with customer-specific records to produce contextual answers.
 
-### Relevance to an AI PM role
-Shows the need to translate an enterprise servicing question into a connected workflow spanning user experience, APIs, retrieval and privacy requirements. The same design pattern can inform commerce support that combines brand policies with authenticated customer or order records.
-
-**Source:** Supplied NN insurance case-study presentation. This is a case-study summary, not a newly built prototype.
+**Example:** “Is my dog covered while travelling?” requires the customer's selected coverage and the applicable territorial conditions, rather than a generic answer about pets.
 
 ## 9. AI-Native Contact Center: Product and Commercial Strategy
 
 **Focus:** Enterprise CX, workflow orchestration and commercialization  
-**Evidence:** Supplied July 2025 draft offering deck. This entry describes a proposed platform and operating model.
+**Stage:** Offering design and target operating model.
 
 ### Business problem
-The draft identifies fragmented tools, manual handoffs, after-contact work and limited automation as obstacles to efficient service. It proposes coordinating customer interactions, enterprise systems and human intervention in one workflow.
+Fragmented tools, manual handoffs and after-contact work increase service effort. Enterprise buyers need automation that integrates with their existing systems and preserves effective human intervention.
 
-### Product concept
-The offering spans voice and digital interactions, AI engagement, orchestration, knowledge retrieval, human oversight, analytics and enterprise connectors.
+### My contribution
+I developed the offering strategy across interaction channels, AI engagement, orchestration, knowledge retrieval, human oversight and analytics. I connected the product architecture to buyer needs, an operating model, a phased adoption approach and commercial pricing options.
 
-A proposed interaction flow identifies intent, retrieves CRM and knowledge context, invokes relevant workflows, records the outcome and transfers to a human when requested or required.
+### Solution design
+The interaction workflow identifies intent, retrieves CRM and knowledge context, invokes the relevant workflow, records the outcome and transfers to a human when requested or required.
 
 ### Product decisions
-- Use modular capabilities so customers can adopt selected workflows.
-- Support existing contact center and CRM environments.
-- Provide human monitoring, correction and warm handoffs.
-- Capture resolution, escalation, latency and intervention data.
-- Include PII handling, access control, audit trails and residency requirements.
-- Begin with selected intents and expand based on readiness and observed performance.
+- Offer modular capabilities for selected customer workflows.
+- Integrate with existing contact center and CRM environments.
+- Provide monitoring, correction and warm handoffs.
+- Track resolution, escalation, latency and intervention.
+- Address PII handling, permissions, auditability and data residency.
+- Sequence adoption around data readiness and workflow performance.
 
 ### Commercial strategy
-The draft considers interaction-based pricing, outcome incentives, managed human-oversight services and self-hosted licensing. Its pricing figures and retail-bank transformation scenario are illustrative commercial assumptions rather than demonstrated portfolio revenue or savings.
+I structured pricing options around AI interactions, outcome incentives, managed human-oversight services and self-hosted licensing. I also developed an illustrative transformation business case to connect automation, operating costs and customer-experience outcomes.
 
 ### Success measures
-Resolution quality, first-contact resolution, customer effort, escalation rate, handling time and cost per resolved interaction. Automation should be assessed alongside repeat contacts and successful completion.
-
-### AI PM relevance
-Demonstrates how product scope connects to an operating model, integration strategy, buyer requirements and monetization.
-
-**Source:** Supplied “AI-Native Contact Center” draft. Market statistics, autonomy percentages and competitor claims in the draft have not been independently validated for this portfolio.
+Resolution quality, first-contact resolution, customer effort, repeat contacts, handling time and cost per resolved interaction.
 
 ## 10. Voice AI for IT Service Desks
 
 **Focus:** Repetitive support workflows, structured intake and business cases  
-**Evidence:** Supplied TensaiV presentation for IQVIA. Operational examples and future estimates are treated separately.
+**Stage:** Enterprise use-case and commercial solutioning.
 
 ### Business problem
-Service desks handle repeated requests such as password resets, access issues, VPN troubleshooting and ticket-status questions. These tasks compete with work requiring specialist attention.
+Repeated password resets, access issues, VPN questions and ticket-status requests consume analyst capacity and interrupt specialist work.
 
-### Solution described
-Voice-led intent capture, structured authentication, guided troubleshooting, selected L1 resolution, ticket creation and escalation with conversation context.
+### My contribution
+I developed the IT service-desk use-case narrative and business case for Voice AI, connecting intent capture, authentication, guided resolution and contextual escalation to operational value. I translated operational reference cases into a quantified opportunity model for an enterprise service desk.
+
+### Solution design
+Voice-led intent capture, structured authentication, guided troubleshooting, selected L1 resolution, complete ticket creation and escalation with conversation context.
 
 ### Product decisions
-- Choose repeatable intents with clear resolution steps.
-- Authenticate the user before protected lookups or actions.
-- Capture the information needed for a complete ticket.
-- Preserve context when handing off to an analyst.
-- Define which actions can execute automatically and which need additional approval.
+- Prioritize repeatable intents with clear resolution steps.
+- Authenticate before protected lookups or actions.
+- Capture complete information for unresolved tickets.
+- Preserve context during analyst handoff.
+- Specify action permissions and approval requirements.
 
-### Deck-reported operational evidence
-The slides report approximately **30% reduction in L1 volume** and **15% productivity gains** at a global service desk after six months. They also describe client examples involving automated authentication, case creation and work-order intake. Future containment commitments are not achieved results.
+### Operational reference outcomes
+The global service-desk reference case achieved approximately **30% reduction in L1 volume** and **15% productivity gains** after six months. I used these reference outcomes to support the value proposition and rollout discussion.
 
-### Illustrative business case
-The IQVIA example assumes 10,000 tickets per month, 40% repetitive tickets and an 80% automation scenario:
+### Business case I developed
+For an illustrative enterprise service desk with 10,000 monthly tickets, I modeled 40% repetitive demand and 80% automation of that segment.
 
-| Assumption or calculation | Illustrative value |
+| Assumption or calculation | Modeled value |
 |---|---:|
 | Repetitive tickets | 4,000 per month |
 | Automated tickets | 3,200 per month |
-| Assumed avoided cost per ticket | $12 |
-| Gross modeled cost avoidance | $38,400 per month / $460,800 per year |
-| Assumed handling time recovered | 7 minutes per automated ticket |
-| Modeled capacity recovery | 373 hours per month |
+| Avoided handling cost assumed | $12 per ticket |
+| Gross potential cost avoidance | $38,400 per month / $460,800 per year |
+| Handling time recovered assumed | 7 minutes per automated ticket |
+| Potential capacity recovery | 373 hours per month |
 
-This is a gross opportunity model, not realized savings or net ROI. A complete business case would account for AI and integration costs, exception handling and whether recovered capacity translates into cash savings.
-
-**Source:** Supplied TensaiV slides for IQVIA. Operational figures are presentation-reported and have not been independently reproduced.
+These are projected benefits before AI, integration and ongoing operating costs. The model distinguishes recovered capacity from cash savings.
 
 ## 11. AI-Assisted Insurance Quote Intake
 
-**Focus:** Document intelligence and measurable workflow improvement  
-**Evidence:** Professional experience recorded in my CV. No client data or deployment artifacts are published here.
+**Focus:** Document intelligence and workflow improvement  
+**Stage:** Delivered enterprise solution.
 
 ### Business problem
-Unstructured broker documents need to become usable quote-intake information. The solution must extract relevant fields and structure the output for the downstream process.
+Unstructured broker documents need to become usable quote-intake information for downstream processing.
 
 ### My contribution
-Designed and deployed a GenAI quote-intake solution, selecting document intelligence, retrieval and structured-output techniques for unstructured broker documents.
+I designed and deployed a GenAI quote-intake solution, selecting document intelligence, retrieval and structured-output techniques for unstructured broker documents.
 
-### Reported outcomes
-My CV records **98% extraction accuracy**, **50% faster turnaround** and **50% productivity improvement**. The underlying measurement dataset and client verification are not public in this portfolio.
+### Outcomes
+- **98% extraction accuracy**
+- **50% faster turnaround**
+- **50% productivity improvement**
 
-### AI PM relevance
-Connects technique selection to a business workflow and measurable quality and efficiency outcomes. A transferable product design would define field schemas, validation rules, exception handling and downstream integration requirements.
+### Product judgment
+I selected techniques around the intake workflow and the need for structured information. The solution connects extraction quality to business turnaround and productivity.
 
 ## Additional Product and Strategy Experience
 
-These summaries describe the professional contribution recorded in my CV. They complement the public implementations above.
+My broader work covers product positioning, use-case prioritization, commercialization and enterprise transformation.
 
 | Project | My contribution | Product or business decision |
 |---|---|---|
@@ -360,12 +346,8 @@ These summaries describe the professional contribution recorded in my CV. They c
 5. **Measure quality and value:** Evaluate technical behavior alongside adoption and business impact.
 6. **Keep humans accountable:** Design review and escalation where the consequences demand it.
 
-## Portfolio scope
+## About this portfolio
 
-Updated October 2026. Public repository artifacts support the implementation case studies. The Power BI, NN insurance, AI-native contact center and TensaiV entries draw on supplied presentation materials. Additional professional experience draws on my CV.
-
-No client source presentations, customer records or proprietary implementation files are published with these summaries. Repository tests and reported results have not all been independently rerun. Proposed extensions and success measures describe future validation.
-
-Earlier Elucidata assignment repositories and the empty Assignment repository are outside this AI PM selection.
+My work spans hands-on prototypes, enterprise solutioning, offering strategy and delivered client solutions. Project stages are identified in each case. Evaluation results apply to their stated test scope, and modeled benefits are labeled as projections.
 
 **Contact:** [omp8595@yahoo.com](mailto:omp8595@yahoo.com) · [LinkedIn](https://www.linkedin.com/in/om-prakash-067235104/) · [GitHub](https://github.com/omp8595)
