@@ -220,7 +220,7 @@ This case demonstrates translating a specialist-heavy enterprise process into a 
 
 ## Portfolio scope
 
-These case studies describe public repository code and documentation, plus a supplied Power BI accelerator presentation, reviewed in October 2026. Features described as implemented are visible in their cited repository sources; the Power BI case uses presentation-reported evidence. they have not all been executed or independently benchmarked for this portfolio. Suggested success metrics and commerce applications are explicitly prospective.
+These case studies describe public repository code and documentation, plus a supplied Power BI accelerator presentation, reviewed in October 2026. Features described as implemented are visible in their cited repository sources; the Power BI case uses presentation-reported evidence. The repository projects have not all been executed or independently benchmarked for this portfolio. Suggested success metrics and commerce applications are explicitly prospective.
 
 Earlier Elucidata assignment repositories are outside this curated AI PM selection; the empty Assignment repository is also omitted.
 
