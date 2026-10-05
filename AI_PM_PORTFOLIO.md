@@ -21,6 +21,7 @@ This portfolio brings together my public GitHub projects and explains the produc
 | [Regulated Life Sciences Platform](#3-regulated-life-sciences-graphrag-platform) | Retrieve evidence with governance and review controls | End-to-end workflow design, multi-tenant APIs and human review |
 | [Enterprise Context Layer](#4-life-sciences-enterprise-context-layer) | Give different agents appropriate context about the same entity | Reusable platform contracts, access boundaries and agent configuration |
 | [AI GTM Dashboard](#5-ai-gtm-pipeline-dashboard) | Turn inconsistent spreadsheets into a usable sales pipeline | Operational product design, data normalization and business judgment |
+| [Power BI Accelerator](#7-power-bi-accelerator-for-insurance) | Accelerate insurance reporting from requirements to documented reports | AI-assisted delivery design, human accountability and pilot evidence |
 | [Fantasy Sports App](#6-supporting-project-fantasy-sports-application) | Connect team selection, contests and changing match data | Consumer workflows, external APIs and deterministic automation |
 
 ## 1. Customer Support RAG Assistant
@@ -165,6 +166,47 @@ The repository includes authentication, team selection, contests, leaderboards, 
 
 **Explore:** [Repository](https://github.com/omp8595/ipl-fantasy-2026) · [Team selection](https://github.com/omp8595/ipl-fantasy-2026/blob/master/src/pages/SelectTeamPage.jsx) · [Scoring integration](https://github.com/omp8595/ipl-fantasy-2026/blob/master/pages/api/cron/score-engine.js)
 
+## 7. Power BI Accelerator for Insurance
+
+**Focus:** AI-assisted reporting delivery and repeatable enterprise solution design  
+**Status:** Offering and pilot case study documented in a supplied Hexaware presentation. Supporting Power BI model, report files and implementation code are not published in this portfolio.
+
+### Problem and intended users
+Insurance business teams need reporting that reflects domain-specific questions, while BI specialists face complex DAX, repeated review cycles and poorly documented model logic. The accelerator addresses the gap between a business requirement and a maintainable report.
+
+### Delivery framework
+The framework covers requirements gathering, semantic model design, DAX development, data preparation, report design and build, documentation, deployment and maintenance.
+
+Humans retain responsibility for business requirements, domain context, governance, technical QA and stakeholder sign-off. AI assists with requirement documentation, gap analysis, SQL / M / DAX generation, model design, report drafts, optimization and documentation.
+
+### Product decisions reflected in the framework
+- Establish a signed-off reporting agreement covering KPIs and data requirements before the build.
+- Inject insurance domain context so generated calculations reflect the intended business meaning.
+- Use reusable semantic models, report baselines and documentation to reduce repeated setup.
+- Keep technical review and business acceptance with accountable human owners.
+- Separate the core delivery framework from optional custom capabilities such as self-service Q&A and report-usage analytics.
+
+### Reported pilot evidence
+The supplied deck describes an underwriting performance pilot with:
+
+| Deliverable | Deck-reported result |
+|---|---|
+| Semantic model | 12 tables, 13 relationships, star schema and a Date table |
+| Calculations | 31 DAX measures across 10 KPI groups, with inline documentation |
+| Report | Three-page report canvas and technical documentation |
+| Build cycle | Two working sessions from schema to report |
+| First load | Zero DAX syntax errors reported |
+
+These are presentation-reported pilot results, not an independently reproduced benchmark. Syntax validity alone does not establish calculation correctness. The deck's production productivity estimates are prospective and are not presented here as achieved outcomes.
+
+### AI product-management relevance
+This case demonstrates translating a specialist-heavy enterprise process into a repeatable AI-assisted offering: define the business agreement, allocate responsibilities between AI and humans, specify deliverables, establish acceptance criteria and distinguish core scope from optional extensions.
+
+### Success measures for a broader rollout
+**Proposed measures:** time to an accepted first report, KPI calculation accuracy, review and rework effort, model performance, documentation coverage and user adoption.
+
+**Source:** Supplied “Power BI Accelerator for Insurance” presentation, Hexaware Technologies, 2026. This portfolio includes a written case-study summary.
+
 ---
 
 ## My approach to AI product problems
@@ -178,7 +220,7 @@ The repository includes authentication, team selection, contests, leaderboards, 
 
 ## Portfolio scope
 
-These case studies describe public repository code and documentation reviewed in October 2026. Features described as implemented are visible in those sources; they have not all been executed or independently benchmarked for this portfolio. Suggested success metrics and commerce applications are explicitly prospective.
+These case studies describe public repository code and documentation, plus a supplied Power BI accelerator presentation, reviewed in October 2026. Features described as implemented are visible in their cited repository sources; the Power BI case uses presentation-reported evidence. they have not all been executed or independently benchmarked for this portfolio. Suggested success metrics and commerce applications are explicitly prospective.
 
 Earlier Elucidata assignment repositories are outside this curated AI PM selection; the empty Assignment repository is also omitted.
 
