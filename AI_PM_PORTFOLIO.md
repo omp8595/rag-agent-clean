@@ -273,6 +273,29 @@ Voice-led intent capture, structured authentication, guided troubleshooting, sel
 - Preserve context during analyst handoff.
 - Specify action permissions and approval requirements.
 
+### Integration architecture
+
+The AgentV design connects the client's contact center and enterprise systems to a hosted voice service:
+
+| Component | Role in the design |
+|---|---|
+| CCaaS and SIP transfer | Receive the call and transfer the voice session to the AI service |
+| Azure Application Gateway and WAF | Protect application ingress |
+| App Service and Azure Functions | Support application logic and integration workflows |
+| Azure OpenAI | Support AI processing within the application layer |
+| Azure Cosmos DB for PostgreSQL | Store application data |
+| Azure AD | Provide the identity integration shown in the design |
+| ServiceNow | Create service tickets using the captured interaction context |
+| Microsoft Intune | Provide device-management integration |
+| Azure Key Vault | Manage secrets |
+| Azure Monitor and Application Insights | Provide infrastructure monitoring and telemetry |
+| Hosted AgentV voice service on Google Cloud | Voice/text conversion, voice LLM processing and voice activity detection |
+| Existing contact center | Receive live transfers when human handling is needed |
+
+The voice-service design includes STT / TTS components, a voice LLM module and voice activity detection. The application connects through call-creation and tool-access APIs. Analytics feed a manager dashboard, while ticket creation and live transfer connect the conversation to operational workflows.
+
+**Product judgment:** The integration boundary matters as much as the model: identity, enterprise tool access, ticket creation, monitoring and human transfer must work together to complete the support journey.
+
 ### Operational reference outcomes
 The global service-desk reference case achieved approximately **30% reduction in L1 volume** and **15% productivity gains** after six months. I used these reference outcomes to support the value proposition and rollout discussion.
 
