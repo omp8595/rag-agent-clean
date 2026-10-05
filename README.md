@@ -5,10 +5,10 @@
 A consolidated portfolio with 11 detailed case studies and 8 additional product-strategy experience summaries. Covers enterprise support RAG, insurance servicing, AI-native contact centers, voice AI, document intelligence, Power BI acceleration, governed GraphRAG, agent context and GTM operations.
 
 **Recommended starting points:**
-- [Insurance Servicing Copilot](AI_PM_PORTFOLIO.md#8-insurance-servicing-copilot)
-- [Customer Support RAG Assistant](AI_PM_PORTFOLIO.md#1-customer-support-rag-assistant)
-- [AI-Native Contact Center Strategy](AI_PM_PORTFOLIO.md#9-ai-native-contact-center-product-and-commercial-strategy)
-- [Power BI Accelerator](AI_PM_PORTFOLIO.md#7-power-bi-accelerator-for-insurance)
+- [Insurance Quote Intake](AI_PM_PORTFOLIO.md#1-ai-assisted-insurance-quote-intake): delivered solution with 98% extraction accuracy and 50% faster turnaround.
+- [Insurance Servicing Copilot](AI_PM_PORTFOLIO.md#2-insurance-servicing-copilot): deployed operations servicing workflow.
+- [Power BI Accelerator](AI_PM_PORTFOLIO.md#3-power-bi-accelerator-for-insurance): 12-table, 31-measure reporting pilot.
+- [Regulated Life Sciences GraphRAG](AI_PM_PORTFOLIO.md#4-regulated-life-sciences-graphrag-platform): implemented prototype with governance test results.
 
 Each case study explains my contribution, product decisions and outcomes, with links to implementation artifacts where available.
 
