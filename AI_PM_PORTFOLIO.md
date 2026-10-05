@@ -14,12 +14,12 @@ This portfolio brings together public GitHub implementations, professional produ
 
 ## Start here
 
-**Start with delivery and results:** insurance quote intake achieved 98% extraction accuracy and 50% faster turnaround. Next, explore AgentV's Voice AI solution and integration architecture, the deployed insurance servicing copilot and the Power BI accelerator pilot, followed by evaluated GraphRAG prototypes and other implementations. Offering strategy and commercial models follow the implementation work.
+**Start with delivery and results:** insurance quote intake achieved 98% extraction accuracy and 50% faster turnaround. Next, explore the Voice AI solution and integration architecture, the deployed insurance servicing copilot and the Power BI accelerator pilot, followed by evaluated GraphRAG prototypes and other implementations. Offering strategy and commercial models follow the implementation work.
 
 | Priority | Project | Delivery and results |
 |---|---|---|
 | 1 | [Insurance Quote Intake](#1-ai-assisted-insurance-quote-intake) | Delivered solution: 98% extraction accuracy, 50% faster turnaround, 50% productivity improvement |
-| 2 | [AgentV: Voice AI for IT Service Desks](#2-agentv-voice-ai-for-it-service-desks) | Use-case strategy and quantified business case using operational reference outcomes |
+| 2 | [Voice AI for IT Service Desks](#2-voice-ai-for-it-service-desks) | Use-case strategy and quantified business case using operational reference outcomes |
 | 3 | [Insurance Servicing Copilot](#3-insurance-servicing-copilot) | Operations servicing deployed; customer-specific policy Q&A and API integration |
 | 4 | [Power BI Accelerator](#4-power-bi-accelerator-for-insurance) | Pilot: 12 tables, 31 DAX measures, three-page report in two working sessions |
 | 5 | [Regulated Life Sciences Platform](#5-regulated-life-sciences-graphrag-platform) | Prototype: 21/21 core and 14/14 GraphRAG governance checks; API and UI |
@@ -52,7 +52,7 @@ I designed and deployed a GenAI quote-intake solution, selecting document intell
 ### Product judgment
 I selected techniques around the intake workflow and the need for structured information. The solution connects extraction quality to business turnaround and productivity.
 
-## 2. AgentV: Voice AI for IT Service Desks
+## 2. Voice AI for IT Service Desks
 
 **Focus:** Repetitive support workflows, structured intake and business cases  
 **Stage:** Enterprise use-case and commercial solutioning.
@@ -73,28 +73,54 @@ Voice-led intent capture, structured authentication, guided troubleshooting, sel
 - Preserve context during analyst handoff.
 - Specify action permissions and approval requirements.
 
-### Integration architecture
+### Voice AI Architecture
 
-The AgentV design connects the client's contact center and enterprise systems to a hosted voice service:
+This logical view separates the voice conversation from enterprise actions and human escalation.
 
-| Component | Role in the design |
+```mermaid
+flowchart TD
+    Caller["Caller"] --> CC["Contact center"]
+    CC -->|Voice session| Voice["Speech and voice AI"]
+    Voice -->|Tool request| Gateway["Protected API gateway"]
+    Gateway --> Runtime["Workflow orchestration"]
+    Runtime --> Identity["Identity and user context"]
+    Runtime --> Data["Application data"]
+    Runtime --> AI["AI processing"]
+    Runtime --> Tools["Enterprise connectors"]
+    Tools --> Tickets["Ticketing system"]
+    Tools --> Devices["Device management"]
+    Runtime -->|Tool result| Voice
+    Runtime -->|Call control| CC
+    Runtime -->|Escalation| Human["Human support"]
+    Runtime -.-> Secrets["Secret management"]
+    Runtime -.-> Monitor["Telemetry and analytics"]
+    Monitor --> Dashboard["Operations dashboard"]
+```
+
+### How the design works
+
+1. **Receive the interaction.** The contact center transfers the voice session to the conversation service.
+2. **Manage the conversation.** Speech recognition, synthesis, voice activity detection and a voice model support the spoken interaction.
+3. **Connect to enterprise workflows.** Tool requests pass through the protected application layer to orchestration, user context and enterprise connectors.
+4. **Complete the operational step.** Integrations support ticket creation and device-management workflows. Tool results return to the conversation.
+5. **Transfer when needed.** The workflow can hand off to human support, while telemetry feeds operational monitoring and analytics.
+
+### Technology mapping
+
+| Architecture responsibility | Technology in the design |
 |---|---|
-| CCaaS and SIP transfer | Receive the call and transfer the voice session to the AI service |
-| Azure Application Gateway and WAF | Protect application ingress |
-| App Service and Azure Functions | Support application logic and integration workflows |
-| Azure OpenAI | Support AI processing within the application layer |
-| Azure Cosmos DB for PostgreSQL | Store application data |
-| Azure AD | Provide the identity integration shown in the design |
-| ServiceNow | Create service tickets using the captured interaction context |
-| Microsoft Intune | Provide device-management integration |
-| Azure Key Vault | Manage secrets |
-| Azure Monitor and Application Insights | Provide infrastructure monitoring and telemetry |
-| Hosted AgentV voice service on Google Cloud | Voice/text conversion, voice LLM processing and voice activity detection |
-| Existing contact center | Receive live transfers when human handling is needed |
+| Inbound voice and transfer | CCaaS, SIP, TLS and SRTP |
+| Protected application ingress | Azure Application Gateway and WAF |
+| Application and integration runtime | Azure App Service and Azure Functions |
+| Identity | Azure AD |
+| AI processing | Azure OpenAI |
+| Application storage | Azure Cosmos DB for PostgreSQL |
+| Enterprise tools | ServiceNow and Microsoft Intune |
+| Secrets | Azure Key Vault |
+| Monitoring | Azure Monitor and Application Insights |
+| Hosted voice processing | Voice service on Google Cloud |
 
-The voice-service design includes STT / TTS components, a voice LLM module and voice activity detection. The application connects through call-creation and tool-access APIs. Analytics feed a manager dashboard, while ticket creation and live transfer connect the conversation to operational workflows.
-
-**Product judgment:** The integration boundary matters as much as the model: identity, enterprise tool access, ticket creation, monitoring and human transfer must work together to complete the support journey.
+**My design focus:** connect the conversation to enterprise workflows while retaining protected tool access, observable execution and a route to human support.
 
 ### Operational reference outcomes
 The global service-desk reference case achieved approximately **30% reduction in L1 volume** and **15% productivity gains** after six months. I used these reference outcomes to support the value proposition and rollout discussion.
