@@ -1,6 +1,6 @@
 # RAG Agent Portfolio
 
-**[View Om Prakash's AI Product Management Portfolio](AI_PM_PORTFOLIO.md)** — six case studies covering support RAG, insurance GraphRAG, governed life-sciences workflows, agent context, GTM operations and consumer product implementation.
+**[View Om Prakash's AI Product Management Portfolio](AI_PM_PORTFOLIO.md)** — seven case studies covering support RAG, insurance GraphRAG, governed life-sciences workflows, agent context, GTM operations, AI-assisted Power BI delivery and consumer product implementation.
 
 A hands-on portfolio of enterprise Generative AI, Retrieval-Augmented Generation (RAG), evaluation, and grounding projects.
 
