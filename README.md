@@ -6,9 +6,9 @@ A consolidated portfolio with 11 detailed case studies and 8 additional product-
 
 **Recommended starting points:**
 - [Insurance Quote Intake](AI_PM_PORTFOLIO.md#1-ai-assisted-insurance-quote-intake): delivered solution with 98% extraction accuracy and 50% faster turnaround.
-- [Insurance Servicing Copilot](AI_PM_PORTFOLIO.md#2-insurance-servicing-copilot): deployed operations servicing workflow.
-- [Power BI Accelerator](AI_PM_PORTFOLIO.md#3-power-bi-accelerator-for-insurance): 12-table, 31-measure reporting pilot.
-- [Regulated Life Sciences GraphRAG](AI_PM_PORTFOLIO.md#4-regulated-life-sciences-graphrag-platform): implemented prototype with governance test results.
+- [AgentV: Voice AI](AI_PM_PORTFOLIO.md#2-agentv-voice-ai-for-it-service-desks): enterprise voice workflow, integration architecture and business case.
+- [Insurance Servicing Copilot](AI_PM_PORTFOLIO.md#3-insurance-servicing-copilot): deployed operations servicing workflow.
+- [Power BI Accelerator](AI_PM_PORTFOLIO.md#4-power-bi-accelerator-for-insurance): 12-table, 31-measure reporting pilot.
 
 Each case study explains my contribution, product decisions and outcomes, with links to implementation artifacts where available.
 
