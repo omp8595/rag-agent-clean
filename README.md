@@ -1,6 +1,16 @@
 # RAG Agent Portfolio
 
-**[View Om Prakash's AI Product Management Portfolio](AI_PM_PORTFOLIO.md)** — seven case studies covering support RAG, insurance GraphRAG, governed life-sciences workflows, agent context, GTM operations, AI-assisted Power BI delivery and consumer product implementation.
+**[View Om Prakash's AI Product Management Portfolio](AI_PM_PORTFOLIO.md)**
+
+A consolidated portfolio with 11 detailed case studies and 8 additional product-strategy experience summaries. Covers enterprise support RAG, insurance servicing, AI-native contact centers, voice AI, document intelligence, Power BI acceleration, governed GraphRAG, agent context and GTM operations.
+
+**Recommended starting points:**
+- [Insurance Servicing Copilot](AI_PM_PORTFOLIO.md#8-insurance-servicing-copilot)
+- [Customer Support RAG Assistant](AI_PM_PORTFOLIO.md#1-customer-support-rag-assistant)
+- [AI-Native Contact Center Strategy](AI_PM_PORTFOLIO.md#9-ai-native-contact-center-product-and-commercial-strategy)
+- [Power BI Accelerator](AI_PM_PORTFOLIO.md#7-power-bi-accelerator-for-insurance)
+
+Implementation artifacts, offering designs, reported pilot results and modeled benefits are identified separately.
 
 A hands-on portfolio of enterprise Generative AI, Retrieval-Augmented Generation (RAG), evaluation, and grounding projects.
 
