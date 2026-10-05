@@ -1,12 +1,12 @@
 # Om Prakash · AI Product Portfolio
 
-### Enterprise problems → practical AI workflows → measurable product quality
+### Enterprise AI solutioning, product strategy and commercial execution
 
 **AI product strategy · Enterprise solutioning · RAG & agents · Commercial execution**
 
 I work at the intersection of enterprise customer problems, AI solution design and commercial strategy. My background combines consulting at Hexaware, business analysis at TCS, an MBA from IIFT Kolkata and a B.Tech in Biotechnology from NIT Calicut.
 
-This portfolio brings together my public GitHub projects and explains the product decisions behind their technical design.
+This portfolio brings together public GitHub implementations, professional product-strategy experience and selected enterprise case studies. Each entry explains the business problem, solution scope, product decisions and available evidence.
 
 [GitHub](https://github.com/omp8595) · [LinkedIn](https://www.linkedin.com/in/om-prakash-067235104/) · [Email](mailto:omp8595@yahoo.com)
 
@@ -14,15 +14,24 @@ This portfolio brings together my public GitHub projects and explains the produc
 
 ## Start here
 
-| Project | Product problem | What it demonstrates |
+**For enterprise AI PM roles:** start with the insurance servicing copilot, customer support RAG assistant and AI-native contact center strategy. Together they cover customer problems, connected data, workflow design and commercial thinking.
+
+| Project | Business problem | Portfolio evidence |
 |---|---|---|
-| [Customer Support RAG Assistant](#1-customer-support-rag-assistant) | Answer questions from an enterprise knowledge base | Customer-facing LLM workflows, hybrid retrieval, streaming and API integration |
-| [Enterprise Insurance GraphRAG](#2-enterprise-insurance-knowledge-graph--graphrag) | Connect fragmented customer, policy, claims and billing facts | Risk-based automation, grounded answers and scoped evaluation |
-| [Regulated Life Sciences Platform](#3-regulated-life-sciences-graphrag-platform) | Retrieve evidence with governance and review controls | End-to-end workflow design, multi-tenant APIs and human review |
-| [Enterprise Context Layer](#4-life-sciences-enterprise-context-layer) | Give different agents appropriate context about the same entity | Reusable platform contracts, access boundaries and agent configuration |
-| [AI GTM Dashboard](#5-ai-gtm-pipeline-dashboard) | Turn inconsistent spreadsheets into a usable sales pipeline | Operational product design, data normalization and business judgment |
-| [Power BI Accelerator](#7-power-bi-accelerator-for-insurance) | Accelerate insurance reporting from requirements to documented reports | AI-assisted delivery design, human accountability and pilot evidence |
-| [Fantasy Sports App](#6-supporting-project-fantasy-sports-application) | Connect team selection, contests and changing match data | Consumer workflows, external APIs and deterministic automation |
+| [Insurance Servicing Copilot](#8-insurance-servicing-copilot) | Answer customer-specific coverage questions | Enterprise case-study presentation |
+| [Customer Support RAG Assistant](#1-customer-support-rag-assistant) | Answer questions from approved knowledge | Agent, retrieval and API code |
+| [AI-Native Contact Center](#9-ai-native-contact-center-product-and-commercial-strategy) | Coordinate AI, systems and human intervention | Draft offering strategy and operating model |
+| [Voice AI for IT Service Desks](#10-voice-ai-for-it-service-desks) | Reduce repetitive support workload | Operational examples and illustrative ROI model |
+| [Insurance Quote Intake](#11-ai-assisted-insurance-quote-intake) | Extract information from broker documents | Professional experience and reported outcomes |
+| [Power BI Accelerator](#7-power-bi-accelerator-for-insurance) | Accelerate reporting delivery | Framework and reported pilot evidence |
+| [Enterprise Insurance GraphRAG](#2-enterprise-insurance-knowledge-graph--graphrag) | Connect customer, policy, claims and billing facts | Design and four-query evaluation artifacts |
+| [Regulated Life Sciences Platform](#3-regulated-life-sciences-graphrag-platform) | Govern evidence retrieval and review | Product API, UI, policies and test artifacts |
+| [Enterprise Context Layer](#4-life-sciences-enterprise-context-layer) | Give different agents appropriate context | Offline prototype, design, demo and tests |
+| [AI GTM Dashboard](#5-ai-gtm-pipeline-dashboard) | Normalize spreadsheets into a sales pipeline | Next.js application and parser code |
+| [Fantasy Sports App](#6-supporting-project-fantasy-sports-application) | Connect contests, teams and match data | Consumer application and integration code |
+| [Additional Product & Strategy Work](#additional-product-and-strategy-experience) | Position offerings and plan enterprise transformation | Professional experience summaries |
+
+**Evidence guide:** Repository projects link to public artifacts. Enterprise case studies summarize supplied materials. Professional experience entries describe the contribution recorded in my CV. Reported outcomes are attributed to their sources; estimates and proposed measures remain separate. Case-study inclusion does not imply sole authorship or implementation ownership.
 
 ## 1. Customer Support RAG Assistant
 
@@ -207,6 +216,139 @@ This case demonstrates translating a specialist-heavy enterprise process into a 
 
 **Source:** Supplied “Power BI Accelerator for Insurance” presentation, Hexaware Technologies, 2026. This portfolio includes a written case-study summary.
 
+## 8. Insurance Servicing Copilot
+
+**Focus:** Customer-specific answers across documents and enterprise records  
+**Evidence:** Supplied NN insurance case-study slides. The materials describe operations servicing as in production, while other slides describe the original POC. No live client deployment or source code is linked here.
+
+### Business problem
+A servicing employee needs to answer questions whose answers depend on both general policy wording and the customer's actual coverages. General document search alone cannot establish what that customer has purchased.
+
+### Users and scope
+The materials cover operations staff, servicing agents and customers, with operations prioritized. The example asks whether a customer's dog is covered while travelling.
+
+### Solution described
+An agent-centric chat interface combines static product information with dynamic policyholder and policy details retrieved through APIs. Azure OpenAI supports attention points and recommendations. The described stack includes React, Python, LangChain, a vector database and SQLite.
+
+### Product decisions reflected in the case
+- Restrict responses to the insurer's products and insurance topics.
+- Apply the Belgium / European operating context.
+- Combine customer policy records with retrieved document evidence.
+- Specify UI, integrations, security, data protection, performance and scalability requirements.
+- Include a session-end vector-data purge requirement for session-indexed content.
+- Plan testing, deployment and hypercare as part of delivery.
+
+### Business value and evidence
+The slides report response-time, productivity and customer-satisfaction improvements. Measurement definitions, baselines and sample sizes are not supplied here, so this portfolio does not reproduce the percentages as independently verified results.
+
+### Relevance to an AI PM role
+Shows the need to translate an enterprise servicing question into a connected workflow spanning user experience, APIs, retrieval and privacy requirements. The same design pattern can inform commerce support that combines brand policies with authenticated customer or order records.
+
+**Source:** Supplied NN insurance case-study presentation. This is a case-study summary, not a newly built prototype.
+
+## 9. AI-Native Contact Center: Product and Commercial Strategy
+
+**Focus:** Enterprise CX, workflow orchestration and commercialization  
+**Evidence:** Supplied July 2025 draft offering deck. This entry describes a proposed platform and operating model.
+
+### Business problem
+The draft identifies fragmented tools, manual handoffs, after-contact work and limited automation as obstacles to efficient service. It proposes coordinating customer interactions, enterprise systems and human intervention in one workflow.
+
+### Product concept
+The offering spans voice and digital interactions, AI engagement, orchestration, knowledge retrieval, human oversight, analytics and enterprise connectors.
+
+A proposed interaction flow identifies intent, retrieves CRM and knowledge context, invokes relevant workflows, records the outcome and transfers to a human when requested or required.
+
+### Product decisions
+- Use modular capabilities so customers can adopt selected workflows.
+- Support existing contact center and CRM environments.
+- Provide human monitoring, correction and warm handoffs.
+- Capture resolution, escalation, latency and intervention data.
+- Include PII handling, access control, audit trails and residency requirements.
+- Begin with selected intents and expand based on readiness and observed performance.
+
+### Commercial strategy
+The draft considers interaction-based pricing, outcome incentives, managed human-oversight services and self-hosted licensing. Its pricing figures and retail-bank transformation scenario are illustrative commercial assumptions rather than demonstrated portfolio revenue or savings.
+
+### Success measures
+Resolution quality, first-contact resolution, customer effort, escalation rate, handling time and cost per resolved interaction. Automation should be assessed alongside repeat contacts and successful completion.
+
+### AI PM relevance
+Demonstrates how product scope connects to an operating model, integration strategy, buyer requirements and monetization.
+
+**Source:** Supplied “AI-Native Contact Center” draft. Market statistics, autonomy percentages and competitor claims in the draft have not been independently validated for this portfolio.
+
+## 10. Voice AI for IT Service Desks
+
+**Focus:** Repetitive support workflows, structured intake and business cases  
+**Evidence:** Supplied TensaiV presentation for IQVIA. Operational examples and future estimates are treated separately.
+
+### Business problem
+Service desks handle repeated requests such as password resets, access issues, VPN troubleshooting and ticket-status questions. These tasks compete with work requiring specialist attention.
+
+### Solution described
+Voice-led intent capture, structured authentication, guided troubleshooting, selected L1 resolution, ticket creation and escalation with conversation context.
+
+### Product decisions
+- Choose repeatable intents with clear resolution steps.
+- Authenticate the user before protected lookups or actions.
+- Capture the information needed for a complete ticket.
+- Preserve context when handing off to an analyst.
+- Define which actions can execute automatically and which need additional approval.
+
+### Deck-reported operational evidence
+The slides report approximately **30% reduction in L1 volume** and **15% productivity gains** at a global service desk after six months. They also describe client examples involving automated authentication, case creation and work-order intake. Future containment commitments are not achieved results.
+
+### Illustrative business case
+The IQVIA example assumes 10,000 tickets per month, 40% repetitive tickets and an 80% automation scenario:
+
+| Assumption or calculation | Illustrative value |
+|---|---:|
+| Repetitive tickets | 4,000 per month |
+| Automated tickets | 3,200 per month |
+| Assumed avoided cost per ticket | $12 |
+| Gross modeled cost avoidance | $38,400 per month / $460,800 per year |
+| Assumed handling time recovered | 7 minutes per automated ticket |
+| Modeled capacity recovery | 373 hours per month |
+
+This is a gross opportunity model, not realized savings or net ROI. A complete business case would account for AI and integration costs, exception handling and whether recovered capacity translates into cash savings.
+
+**Source:** Supplied TensaiV slides for IQVIA. Operational figures are presentation-reported and have not been independently reproduced.
+
+## 11. AI-Assisted Insurance Quote Intake
+
+**Focus:** Document intelligence and measurable workflow improvement  
+**Evidence:** Professional experience recorded in my CV. No client data or deployment artifacts are published here.
+
+### Business problem
+Unstructured broker documents need to become usable quote-intake information. The solution must extract relevant fields and structure the output for the downstream process.
+
+### My contribution
+Designed and deployed a GenAI quote-intake solution, selecting document intelligence, retrieval and structured-output techniques for unstructured broker documents.
+
+### Reported outcomes
+My CV records **98% extraction accuracy**, **50% faster turnaround** and **50% productivity improvement**. The underlying measurement dataset and client verification are not public in this portfolio.
+
+### AI PM relevance
+Connects technique selection to a business workflow and measurable quality and efficiency outcomes. A transferable product design would define field schemas, validation rules, exception handling and downstream integration requirements.
+
+## Additional Product and Strategy Experience
+
+These summaries describe the professional contribution recorded in my CV. They complement the public implementations above.
+
+| Project | My contribution | Product or business decision |
+|---|---|---|
+| AgentVerse | Translated client pain points, market trends and 60+ competitor offerings into product strategy, buy-vs-build positioning, pricing and a repeatable commercial model | Decide how to package, differentiate and commercialize enterprise agent capabilities |
+| Fiducia: Private Equity Investment Intelligence | Defined positioning and GTM strategy covering mandate-led sourcing, screening, analysis and explainable decision support | Align agent workflows to an investment team's decision process |
+| Digital Client Onboarding | Positioned a wealth onboarding offering combining document processing, KYC / AML controls, orchestration and exception routing | Define the path to straight-through processing and the cases needing review |
+| M&A Due-Diligence Solution | Defined extraction, cross-document reconciliation, risk identification and human-review scope, with quality criteria | Establish what constitutes supported evidence and acceptable output |
+| Wealth Analytics Platform | Led product strategy across portfolio insights, reporting, personalization and compliance, with use-case sequencing around critical data elements | Connect the roadmap to data readiness, adoption and value |
+| BioMirror | Drove strategy and commercialization for contactless health screening using rPPG / rBCG, with privacy, on-device AI and enterprise integration considerations | Shape deployment fit and the commercial proposition |
+| UK Insurer Transformation | Structured priorities across underwriting, claims and contact center, shaping a target operating model and three-year roadmap | Connect use cases to business value, ownership and responsible AI |
+| AI Asset Commercialization for a Storage / Semiconductor Manufacturer | Assessed desirability, viability and feasibility, with Go / Incubate / No-Go decisions and a four-week proof-of-value roadmap | Decide which capabilities merit further product investment |
+
+**Professional foundation:** Consultant, AI Strategy & GTM at Hexaware Technologies (May 2023–present), following business analysis at TCS (January 2018–September 2021). MBA, IIFT Kolkata; B.Tech Biotechnology, NIT Calicut.
+
 ---
 
 ## My approach to AI product problems
@@ -220,8 +362,10 @@ This case demonstrates translating a specialist-heavy enterprise process into a 
 
 ## Portfolio scope
 
-These case studies describe public repository code and documentation, plus a supplied Power BI accelerator presentation, reviewed in October 2026. Features described as implemented are visible in their cited repository sources; the Power BI case uses presentation-reported evidence. The repository projects have not all been executed or independently benchmarked for this portfolio. Suggested success metrics and commerce applications are explicitly prospective.
+Updated October 2026. Public repository artifacts support the implementation case studies. The Power BI, NN insurance, AI-native contact center and TensaiV entries draw on supplied presentation materials. Additional professional experience draws on my CV.
 
-Earlier Elucidata assignment repositories are outside this curated AI PM selection; the empty Assignment repository is also omitted.
+No client source presentations, customer records or proprietary implementation files are published with these summaries. Repository tests and reported results have not all been independently rerun. Proposed extensions and success measures describe future validation.
 
-**Contact:** [omp8595@yahoo.com](mailto:omp8595@yahoo.com) · [LinkedIn](https://www.linkedin.com/in/om-prakash-067235104/)
+Earlier Elucidata assignment repositories and the empty Assignment repository are outside this AI PM selection.
+
+**Contact:** [omp8595@yahoo.com](mailto:omp8595@yahoo.com) · [LinkedIn](https://www.linkedin.com/in/om-prakash-067235104/) · [GitHub](https://github.com/omp8595)
