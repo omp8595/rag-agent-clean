@@ -10,7 +10,7 @@ A consolidated portfolio with 11 detailed case studies and 8 additional product-
 - [AI-Native Contact Center Strategy](AI_PM_PORTFOLIO.md#9-ai-native-contact-center-product-and-commercial-strategy)
 - [Power BI Accelerator](AI_PM_PORTFOLIO.md#7-power-bi-accelerator-for-insurance)
 
-Implementation artifacts, offering designs, reported pilot results and modeled benefits are identified separately.
+Each case study explains my contribution, product decisions and outcomes, with links to implementation artifacts where available.
 
 A hands-on portfolio of enterprise Generative AI, Retrieval-Augmented Generation (RAG), evaluation, and grounding projects.
 
