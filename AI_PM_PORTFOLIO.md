@@ -341,7 +341,7 @@ The repository includes authentication, team selection, contests, leaderboards, 
 
 ## 11. AI-Native Contact Center: Product and Commercial Strategy
 
-**Interactive architecture:** [Explore or download the HTML walkthrough](public/insurance-contact-center/index.html). Download the file and open it in a browser to use the interactive controls. If running this repository's Express application, open `/insurance-contact-center/`.
+**Architecture case study:** [Read the architecture, evaluation, governance and observability walkthrough](projects/insurance-contact-center/README.md). Includes a rendered diagram and a link to download the interactive HTML.
 
 The explorer covers the live voice journey, orchestration, GraphRAG, model-training options, human oversight, earned autonomy, and the pilot roadmap. It is an illustrative solution-design case: model choices and training methods are assumptions, and offering targets are not reported client outcomes.
 
